@@ -1,0 +1,40 @@
+{
+  "cloud": true,
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/themes/themes",
+    "pages/me/me",
+    "pages/friends/friends"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "backgroundColor": "#eeeeee",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#696969",
+    "selectedColor": "#ffa500",
+    "backgroundColor": "#eeeeee",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "打卡"
+      },
+      {
+        "pagePath": "pages/themes/themes",
+        "text": "主题"
+      },
+      {
+         "pagePath": "pages/friends/friends",
+         "text": "圈子"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的"
+      }
+    ]
+  }
+}
