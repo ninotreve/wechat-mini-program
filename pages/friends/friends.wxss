@@ -1,1 +1,41 @@
-/* pages/friends/friends.wxss */
+.heading{
+  font-size: 45rpx;
+  padding: 40rpx;
+  color:brown;
+}
+
+.ranking-container {
+  background: #F5F5F5;
+  padding: 32rpx 26rpx;
+}
+.discover-container {
+  background: #F5F5F5;
+  padding: 32rpx 26rpx;
+}
+
+.audio-item{
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 240rpx;
+  margin-bottom: 32rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 0 14rpx 6rpx rgb(228, 228, 228);
+  align-content: center;
+}
+
+.audio-content{
+  width: 100%;
+  height: 240rpx;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  padding: 44rpx 28rpx;
+  box-sizing: border-box;
+  border-radius: 0rpx 10rpx 10rpx 0 ;
+}
+
+button {
+  height: 90rpx; 
+  margin: 10rpx;
+}

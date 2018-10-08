@@ -1,0 +1,23 @@
+<!--pages/audio/audio.wxml-->
+<view class="bg">
+  <view class="audio">
+    <text>{{readerName}}</text>
+    <text>{{time}}</text>
+    <text>{{readTitle}}</text>
+    <text>{{readText}}</text>
+    <view class="btn-area">
+      <button bindtap="play" wx:if="{{playing == false}}">
+        <image style="width: 70rpx; height: 70rpx;" src="play.png"></image>
+      </button>
+      <button bindtap="stop" wx:if="{{playing == true}}">
+        <image style="width: 70rpx; height: 70rpx;" src="stop.png"></image>
+      </button>
+      <button bindtap="remove" wx:if="{{canDelete}}">
+        <image style="width: 70rpx; height: 70rpx;" src="remove.png"></image>
+      </button>
+      <button bindtap="like" wx:if="{{canDelete == false}}">
+        <image style="width: 70rpx; height: 70rpx;" src="like.png"></image>
+      </button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,69 @@
+/* pages/login/login.wxss */
+.login-container {
+    position: absolute;
+    /*display: flex;*/
+    width: 100%;
+    min-height: 100%;
+    /*flex-direction: column;*/
+    /*align-items: center;*/
+    /*justify-content: space-between;*/
+    box-sizing: border-box;
+    background: rgb(75, 56, 31);
+    font: menu;
+}
+.login-header{
+    position: relative;
+    width: 100%;
+    height: 400rpx;
+}
+.login-hd {
+    position: relative;
+    z-index: 9;
+    bottom: 0;
+    width: 100%;
+    height: 400rpx;
+}
+.login-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow:column nowrap;
+    font-size: 60rpx;
+    line-height: 80rpx;
+    text-align: center;
+    text-decoration: blink;
+    color: rgb(254,245,162);
+    text-shadow: 4rpx 4rpx 0 rgb(255,165,0);
+    font-weight: bold;
+    padding: 50rpx;
+}
+.login-choose{
+    display: fixed;
+    margin: 20rpx 80rpx;
+    align-items: center;
+    justify-content: center;
+    height: 400rpx;
+    border: 2rpx solid gold;
+    font-size: 50rpx;
+    line-height: 70rpx;
+    padding: 10rpx;
+    color:  rgb(254,245,162);
+}
+.login-c1{
+    display: fixed;
+    margin: 10rpx 40rpx;
+    align-items: center;
+    justify-content: center;
+    font-size: 40rpx;
+    padding: 10rpx;
+    color: rgb(254,245,162);
+}
+.login-option{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 250rpx;
+    border-bottom: 2rpx solid #F7F7F7;
+    color: #808080;
+}

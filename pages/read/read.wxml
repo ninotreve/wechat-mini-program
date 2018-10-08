@@ -1,0 +1,20 @@
+<view class="image-container">
+  <image src="background.jpg"> </image>
+</view>
+
+<view class="text-container">
+  <view style='color:#f00;'>{{title}}</view>
+  <view style='color:black;'>{{author}}</view>
+  <view style='color:green;'>{{text}}</view>
+</view>
+
+<view class="button-area">
+  <button type="primary" plain="true" bindtap="record" wx:if="{{recording == false}}"> 开始录音 </button>
+  <button type="primary" plain="true" disabled="true" wx:if="{{recording == true}}"> 录音中…… </button>
+  <button type="warn" plain="true" bindtap="stop"> 停止录音 </button>
+  <button plain="true" bindtap="pause" wx:if="{{paused == false}}"> 暂停录音 </button>
+  <button plain="true" bindtap="resume" wx:if="{{paused == true}}"> 继续录音 </button>
+  <button plain="true" bindtap="play" wx:if="{{playing == false}}"> 播放录音 </button>
+  <button plain="true" bindtap="stopplay" wx:if="{{playing == true}}"> 停止播放 </button>
+</view>
+<button loading="{{loading}}" disabled="{{disabled}}" bindtap="upload"> 上传 </button>

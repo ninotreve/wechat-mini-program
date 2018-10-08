@@ -1,0 +1,14 @@
+<!--pages/discover/discover.wxml-->
+
+<view class="read-container" bindtap="toFriends">
+  <text>{{name}}新发表了一篇作品，\n点击去听听</text>
+</view>
+
+<view class="ranking-container">
+  <text>查看排行榜</text>
+  <view class="button-area">
+    <button bindtap="toRanking" id="0">按诵读次数</button>
+    <button bindtap="toRanking" id="1">按闯关数</button>
+  </view>
+  <image src="ranking.jpg" class="ranking-picture" />
+</view>

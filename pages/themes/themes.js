@@ -1,20 +1,66 @@
-// pages/theme/theme.js
+const db = wx.cloud.database()
+var app = getApp()
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-
+  tapResultItem: function (e) {
+    var that = this
+    var readingId = e.currentTarget.id
+    var readingItem = {}
+    db.collection('texts').where({
+      _id: readingId
+    }).get({
+      success: function (res) {
+        readingItem = {
+          title: res.data[0].title,
+          text: res.data[0].text,
+          author: res.data[0].author,
+          no: 0
+        }
+        app.setReadingItem(readingItem);
+        that.toRead()
+      }
+    })
+  },
+  
+  addText: function() {
+    wx.navigateTo({
+      url:"../addtext/addtext"
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  toRead: function() {
+    wx.navigateTo({
+      url: "../read/read?id=2"
+    })
+  },
+
+  data: {
+    notFound: false
+  },
+
+  formSubmit: function (e, re) {
+    var that = this;
+    var formData = e.detail.value.id; 
+    db.collection('texts').where({
+      title: formData
+    }).get({
+      success: function (res) {
+
+        that.setData({
+          re: res.data
+        })
+        if (res.data.length == 0) {
+          that.setData({ notFound: true })
+        } else {
+          that.setData({ notFound: false })
+        }
+      }
+    })
+  },
+
   onLoad: function (options) {
 
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

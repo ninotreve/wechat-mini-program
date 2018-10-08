@@ -1,0 +1,42 @@
+<wxs src="../../wxs/subutil.wxs" module="tools" />
+
+<text style="font:40rpx" class="message"> 基础篇 </text>
+
+<scroll-view scroll-y style="height: 800rpx;" class="task-container" wx:if="{{canUnlock == true}}">
+  <block wx:for-items="{{taskList}}" wx:for-item="task" wx:key="no">
+    <view class="task-item">
+      <view class="task-content" bindtap="tapTaskItem" id="{{task._id}}"  wx:if="{{unlockedTasks+1 == task.no}}">
+        <view>{{task.title + " " + task.author}}</view>
+        <view>{{tools.sub(task.text)}}</view>
+      </view>
+      <view class="no-content" wx:if="{{unlockedTasks+1 < task.no}}">
+        <view> 尚未解锁 </view>
+      </view>
+      <view class="no-content" wx:if="{{unlockedTasks+1 > task.no}}">
+        <view>{{task.title + "（已完成）"}}</view>
+      </view>
+    </view>
+  </block>
+
+</scroll-view>
+
+<scroll-view scroll-y style="height: 800rpx;" class="task-container" wx:if="{{canUnlock == false}}">
+  <block wx:for-items="{{taskList}}" wx:for-item="task" wx:key="task">
+    <view class="task-item" id="{{task._id}}">
+      <view class="task-content" wx:if="{{unlockedTasks+1 == task.no}}">
+        <view>{{task.title}}</view>
+      </view>
+      <view class="no-content" wx:if="{{unlockedTasks+1 < task.no}}">
+        <view> 尚未解锁 </view>
+      </view>
+      <view class="no-content" wx:if="{{unlockedTasks+1 > task.no}}">
+        <view> 已完成 </view>
+      </view>
+    </view>
+  </block>
+
+</scroll-view>
+
+<text class="message" wx:if="{{canUnlock == false && unlockedTasks < 30}}"> 您今天已经闯过关啦！明天再来吧 </text>
+
+<text class="message" wx:if="{{canUnlock == false && unlockedTasks >= 30}}"> 您已完成所有关卡，去试试自由模式吧 </text>

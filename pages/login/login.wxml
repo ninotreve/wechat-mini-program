@@ -1,0 +1,29 @@
+<!--pages/login/login.wxml-->
+<view class="login-container">
+  <view class="login-header">
+    <image class="login-hd" src="header.png"> </image>
+  </view>
+  <view class="login-content">
+    <text>欢迎来到\n书香盈耳大家庭</text>
+  </view>
+  <view wx:if="{{has_account != true}}" class="login-choose">
+    <text>初来乍到，给自己起个独一无二的名字吧</text>
+    <form bindsubmit="newAccount">
+      <view class="login-c1">
+      <input type="text" name="id" placeholder="请输入用户名" style='border:1px solid;height:10px' placeholder-style='color:#fefefe'/>
+      </view>
+      <view class="login-c1">
+      <button disabled="{{disabled}}" formType="submit">创建账号</button>
+      </view>
+    </form>
+    <text>{{error_message}}</text>
+  </view>
+
+  <view class="login-choose" wx:if="{{has_account == true}}">
+    <text>已有账号：{{account_name}}</text>
+    <view class="login-c1" bindtap="toIndex">
+      <button> 开启诵读之旅 </button>
+    </view>
+  </view>
+
+</view>

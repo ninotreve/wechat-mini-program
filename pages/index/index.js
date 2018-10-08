@@ -1,44 +1,26 @@
-//index.js
-//获取应用实例
-var voice = "";
-var initData = "朗读文本：\n目前还没有朗读文本"
-var show = "";
+const db = wx.cloud.database()
+var re = null
+var openid = ""
+var util = require('../../utils/util.js');
+var app = getApp()
 
 Page({
-  record: function () {
-    wx.startRecord({
-      success: function (res) {
-        voice = res.tempFilePath
-      },
-      fail: function (res) {
-        //录音失败
-      }
-    })
-    setTimeout(function () {
-      //结束录音  
-      wx.stopRecord()
-    }, 10000)
-  },
-  stop: function () {
-    wx.stopRecord();
-  },
-  play: function () {
-    wx.playVoice({
-      filePath: voice,
-      complete: function () {
-      }
+  taskread: function () {
+    wx.navigateTo({
+      url: '../taskread/taskread'
     })
   },
-
+  freeread: function () {
+    wx.switchTab({
+      url: '../themes/themes'
+    })
+  },
+  
   data: {
-    text: initData
+    
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-
   },
 
   /**
@@ -52,7 +34,21 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var time = util.getTime(new Date())
+    console.log(app.getUserInfo())
+    this.setData({
+      time_indicator: time,
+      account_name: app.getUserInfo().account_name,
+      times: app.getUserInfo().times,
+      tasks: app.getUserInfo().tasks
+    })
+    if (time == "早上") {
+      this.setData({image: "morning.jpg"})
+    } else if (time == "下午") {
+      this.setData({ image: "afternoon.jpg" })
+    } else {
+      this.setData({ image: "evening.jpg" })
+    }
   },
 
   /**

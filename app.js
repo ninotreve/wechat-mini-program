@@ -1,39 +1,70 @@
 //app.js
+var util = require('utils/util.js');
 App({
   onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
-
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
-            }
-          })
-        }
+    wx.cloud.init({})
+  },
+  setUserInfo: function (userInfo) {
+    var that = this;
+    that.globalData.userInfo = userInfo;
+  },
+  getUserInfo: function () {
+    var that = this;
+    return that.globalData.userInfo;
+  },
+  setReadingItem: function(item) {
+    var that = this;
+    that.globalData.readingItem = item;
+  },
+  getReadingItem: function() {
+    var that = this;
+    return that.globalData.readingItem;
+  },
+  addTask: function () {
+    var that = this;
+    var id = that.globalData.userInfo.id;
+    const db = wx.cloud.database();
+    that.globalData.userInfo.tasks += 1;
+    db.collection('accounts').doc(id).update({
+      data: {
+        tasks: db.command.inc(1)
       }
     })
   },
+
+  setDate: function () {
+    var that = this;
+    var id = that.globalData.userInfo.id;
+    const db = wx.cloud.database();
+    var date = util.getDate(new Date())
+    that.globalData.userInfo.last_time = date;
+    db.collection('accounts').doc(id).update({
+      data: {
+        lastTime: date
+      }
+    })
+  },
+
+  addTime: function () {
+    var that = this;
+    var id = that.globalData.userInfo.id;
+    const db = wx.cloud.database();
+    that.globalData.userInfo.times += 1;
+    db.collection('accounts').doc(id).update({
+      data: {
+        times: db.command.inc(1),
+      }
+    })
+  },
+
   globalData: {
-    userInfo: null
+    userInfo: null,
+    readingItem: {
+      title: "无题",
+      text: "无文本",
+      author: "",
+      no: 0
+    }
   }
+
 })

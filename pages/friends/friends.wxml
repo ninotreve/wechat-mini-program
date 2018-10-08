@@ -1,2 +1,14 @@
-<!--pages/friends/friends.wxml-->
-<text>这个页面可以看好友的打卡情况</text>
+<view class="heading">
+  <text>{{headtext}}</text>
+</view>
+
+<view class="discover-container">
+  <block wx:for-items="{{audioList}}" wx:for-item="audio" wx:key="_id">
+    <view class="audio-item" bindtap="detail" id="{{audio._id}}">
+      <view class="audio-content">
+        <text> {{audio.readerName + ": \n" + audio.readAuthor + "-" + audio.readTitle}}</text>
+        <text>{{audio.time}}</text>
+      </view>
+    </view>
+  </block>
+</view>

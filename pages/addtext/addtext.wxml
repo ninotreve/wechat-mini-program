@@ -1,0 +1,18 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="section">
+    <view class="section-title">作品标题</view>
+    <input name="title" placeholder="请输入完整标题" />
+  </view>
+  <view class="section">
+    <view class="section-title">作者</view>
+    <input name="author" placeholder="请输入作者" />
+  </view>
+  <view class="section">
+    <view class="section-title">内容</view>
+    <textarea name="text" placeholder="请输入内容，不超过200字" maxlength="200" auto-height="{{true}}"> </textarea> 
+  </view>
+  <view class="btn-area">
+    <button formType="submit">提交</button>
+    <button formType="reset">清空</button>
+  </view>
+</form>

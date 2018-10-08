@@ -1,0 +1,11 @@
+.section {
+  margin: 30px;
+  text-align: center;
+  font-size:45rpx;
+}
+
+.section-title {
+  color: darkred;
+}
+
+button {margin: 20rpx 60rpx;}

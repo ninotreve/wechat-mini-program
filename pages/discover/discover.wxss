@@ -1,0 +1,35 @@
+/* pages/discover/discover.wxss */
+.ranking-container{
+  position: relative;
+  width: 750rpx;
+  height: 50%;
+  padding: 60rpx;
+  font-size: 55rpx;
+  font-weight: bold;
+  color: goldenrod;
+}
+
+.button-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap:wrap;
+}
+button {margin: 30rpx 30rpx;}
+
+.ranking-picture {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300rpx;
+  height: 300rpx;
+}
+
+.read-container{
+  width: 750rpx;
+  height: 150rpx;
+  padding: 60rpx;
+  font-size: 45rpx;
+  background-color: seashell;
+  color: brown;
+}

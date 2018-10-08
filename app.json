@@ -1,39 +1,54 @@
 {
   "cloud": true,
   "pages": [
+    "pages/login/login",
     "pages/index/index",
     "pages/logs/logs",
     "pages/themes/themes",
     "pages/me/me",
-    "pages/friends/friends"
+    "pages/friends/friends",
+    "pages/read/read",
+    "pages/taskread/taskread",
+    "pages/ranking/ranking",
+    "pages/addtext/addtext",
+    "pages/discover/discover",
+    "pages/audio/audio"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "backgroundColor": "#eeeeee",
+    "navigationBarBackgroundColor": "#FFDAB9",
+    "navigationBarTitleText": "书香盈耳诵读会",
+    "backgroundColor": "#FAF0E6",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "#696969",
-    "selectedColor": "#ffa500",
-    "backgroundColor": "#eeeeee",
+    "color": "#000000",
+    "selectedColor": "goldenrod",
+    "backgroundColor": "#FFDAB9",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "打卡"
+        "text": "打卡",
+        "iconPath": "icons/read.png",
+        "selectedIconPath": "icons/read-color.png"
       },
       {
         "pagePath": "pages/themes/themes",
-        "text": "主题"
+        "text": "主题",
+        "iconPath": "icons/themes.png",
+        "selectedIconPath": "icons/themes-color.png"
       },
       {
-         "pagePath": "pages/friends/friends",
-         "text": "圈子"
+        "pagePath": "pages/discover/discover",
+        "text": "发现",
+        "iconPath": "icons/discover.png",
+        "selectedIconPath": "icons/discover-color.png"
       },
       {
         "pagePath": "pages/me/me",
-        "text": "我的"
+        "text": "我",
+        "iconPath": "icons/me.png",
+        "selectedIconPath": "icons/me-color.png"
       }
     ]
   }

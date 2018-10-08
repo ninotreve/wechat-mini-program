@@ -1,0 +1,49 @@
+.task-container {
+  background: #F5F5F5;
+  padding: 32rpx 26rpx;
+} 
+
+.task-item{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 240rpx;
+  margin-bottom: 32rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 0 14rpx 6rpx rgb(228, 228, 228);
+}
+
+.task-content{
+  width: 100%;
+  height: 240rpx;
+  display: flex;
+  background: #FFFFFF;
+  flex-direction: column;
+  padding: 44rpx 28rpx;
+  box-sizing: border-box;
+  border-radius: 0rpx 10rpx 10rpx 0 ;
+  font-size: 40rpx;
+}
+
+.no-content{
+  width: 100%;
+  height: 240rpx;
+  display: flex;
+  flex-direction: column;
+  padding: 44rpx 28rpx;
+  box-sizing: border-box;
+  border-radius: 0rpx 10rpx 10rpx 0 ;
+  font-size: 50rpx;
+  font-weight: bold;
+  opacity:0.6;
+}
+
+.message{
+    display: flex;
+    flex-flow:column nowrap;
+    font-size: 40rpx;
+    line-height: 80rpx;
+    color: #1c5a74;
+    padding: 20rpx 30rpx;
+}

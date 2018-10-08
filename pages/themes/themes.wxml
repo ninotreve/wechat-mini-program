@@ -1,2 +1,32 @@
-<!--pages/theme/theme.wxml-->
-<text>这个页面搜索阅读材料，新增的功能是，用户可以自己上传朗诵作品</text>
+<wxs src="../../wxs/subutil.wxs" module="tools" />
+
+<view class="search-container">
+  <text style="font-weight: bold;">查询作品</text>
+  <view class="search-icon">
+    <icon type="search" size="30"/>
+  </view>
+  <form bindsubmit="formSubmit">
+  <view class="search-container">
+    <input type="text" name="id" placeholder="请输入完整标题" style='border:1px solid; height:40px;'/>
+  </view>
+  <button formType="submit" class="btn" style="font-weight: bold;">搜索</button>   
+  </form>
+</view>
+
+<view class="response-container"> 
+  <scroll-view scroll-y style="height: 400rpx;" class="result-container">
+    <block wx:for-items="{{re}}" wx:for-item="result" wx:key="result">
+      <view class="result-item" bindtap="tapResultItem" id="{{result._id}}">
+        <view class="result-content">
+          <view style='color:#8B4513;'>{{result.title}}</view>
+          <view style='color:black;'>{{tools.sub(result.text)}}</view>
+        </view>
+      </view>
+    </block>
+    <view class="response-container" wx:if="{{notFound}}">数据库里暂未收录该作品\n请点击下方的“添加作品”</view>
+  </scroll-view>
+  <view class="response-container"> 
+    <view class="button1" bindtap="addText">添加作品</view>
+    <view class="button2" bindtap="toRead">直接录音</view>
+  </view>
+</view>

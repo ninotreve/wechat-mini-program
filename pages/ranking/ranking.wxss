@@ -1,0 +1,93 @@
+.section {
+  margin: 30px;
+  text-align: center;
+  font-size:50rpx;
+  color: darkgoldenrod;
+  font-weight: bold;
+}
+
+.head-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 750rpx;
+  height: 450rpx;
+}
+
+.ranking-container {
+  padding: 60rpx 20rpx;
+  margin-top: 450rpx;
+  background-color:oldlace
+}
+
+.ranking-content {
+  position: relative;
+  width: 100%;
+  height: 150rpx;
+  display: flex;
+  padding: 60rpx 20rpx;
+  box-sizing: border-box;
+  border-radius: 28rpx ;
+  font-size: 40rpx;
+  border-bottom: 4rpx solid #f6f6f6;
+  border: 2rpx;
+  border-color: gold;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-rank-icon {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.user-name {
+  font-size: 50rpx;
+  height: 60rpx;
+}
+
+.user-num {
+  font-size: 50rpx;
+  color: #ff7500;
+}
+
+
+.main-rank-list {
+  position: relative;
+  padding-bottom: 24rpx;
+}
+
+.rank-item {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding: 18rpx 60rpx;
+  height: 116rpx;
+  box-sizing: border-box;
+  border-bottom: 4rpx solid #f6f6f6;
+}
+
+.rank-item-pos {
+  font-size: 40rpx;
+  width: 56rpx;
+}
+
+.rank-item-info {
+  margin-left: 20rpx;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.rank-item-info-name {
+  font-size: 35rpx;
+}
+
+
+.rank-item-flowernum {
+  position: absolute;
+  font-size: 40rpx;
+  line-height: 80rpx;
+  color: #ff7500;
+  right: 64rpx;
+}

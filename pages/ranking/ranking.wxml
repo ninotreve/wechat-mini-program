@@ -1,0 +1,29 @@
+<!-- flower_container.wxml -->
+<image src="head.png" class="head-picture"> </image>
+
+<view class="ranking-container">
+  <text class="section" wx:if="{{isTimes}}">诵读次数排行榜</text>
+  <text class="section" wx:if="{{!isTimes}}">闯关数排行榜</text>
+  <block wx:for-items="{{_firstRank}}" wx:key="_openid">
+    <view class="ranking-content" bindtap="seeProfile" id="{{item._openid}}">
+      <image wx:if="{{index == 0}}" class="user-rank-icon" src="one.png" />
+      <image wx:if="{{index == 1}}" class="user-rank-icon" src="two.png" />
+      <image wx:if="{{index == 2}}" class="user-rank-icon" src="three.png" />
+      <text class="user-name">{{item.accountName}}</text>
+      <text class="user-num" wx:if="{{isTimes}}">{{item.times}}</text>
+      <text class="user-num" wx:if="{{!isTimes}}">{{item.tasks}}</text>
+    </view>
+  </block>
+  <!-- 主红花排行 -->
+  <view class="main-rank-list">
+    <block wx:for-items="{{_mainRank}}" wx:key="_openid">
+      <view class="rank-item">
+        <text class="rank-item-pos">{{index+4}}</text>
+        <view class="rank-item-info">
+          <text class="rank-item-info-name">{{item.accountName}}</text>
+        </view>
+        <text class="rank-item-flowernum">{{item.times}}</text>
+      </view>
+    </block>
+  </view>
+</view>

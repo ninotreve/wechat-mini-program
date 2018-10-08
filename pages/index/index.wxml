@@ -1,13 +1,20 @@
 <!--index.wxml-->
-<view class="btn-area">
-  <view class="body-view">
-    <text>{{text}}</text>
+
+<view class="index-container">
+  <image class="index-image" src="{{image}}"> </image>
+  <view class="index-header-content">
+    <text>{{time_indicator}}好，{{account_name}}！\n</text>
+    <text>您已打卡{{times}}次，闯过{{tasks}}关</text>
   </view>
 </view>
 
-<button bindtap="record"> 开始录音 </button>
-<button bindtap="stop"> 停止录音 </button>
-<button bindtap="play"> 播放 </button>
+<view class="mode-container">
+  <view class="mode" bindtap="taskread">
+    <text>闯关\n模式</text>
+  </view>
+  <view class="mode" bindtap="freeread">
+    <text>自由\n模式</text>
+  </view>
+</view>
 
-<text>{{show}}</text>
-
+<text class="index-header-content2"> 【提示】闯关模式：每日一关；自由模式：每日无限制</text>
